@@ -7,9 +7,8 @@ test('employee object created', () => {
     expect(employee.name).toEqual(expect.any(String));
     expect(employee.id).toEqual(expect.any(String));
     expect(employee.email).toEqual(expect.any(String));
-    expect(employee.role).toEqual(expect.any(String));
     expect(employee.getName()).toEqual(expect.any(String))
     expect(employee.getId()).toEqual(expect.any(String))
     expect(employee.getEmail()).toEqual(expect.any(String))
-    expect(employee.getRole()).toEqual(expect.any(String))
+    expect(employee.getRole()).toEqual("Employee")
 });
