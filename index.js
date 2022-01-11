@@ -35,10 +35,12 @@ const getGeneralInfo = function(role = "Manager") {
             message: `What is the manager's office number?`, 
             name:'officeNumber'
          })
-         .then(result => {
-            manager.officeNumber = result;
+         .then(({officeNumber}) => {
+            manager.officeNumber = officeNumber;
+            manager.getRole();
             personelArray.push(manager);
-            chooseNext();
+            console.log(personelArray);
+            // chooseNext();
          })
       } else if (role === "Engineer") {
          let engineer = new Engineer;
