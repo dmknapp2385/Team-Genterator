@@ -49,8 +49,8 @@ const getGeneralInfo = function(role = "Manager") {
             message: `What is the engineer's github username?`, 
             name:'github'
          })
-         .then(result => {
-            engineer.github = result;
+         .then(({github}) => {
+            engineer.github = github;
             personelArray.push(engineer);
             chooseNext();
          })
@@ -62,8 +62,8 @@ const getGeneralInfo = function(role = "Manager") {
             message: `What is the intern's school name?`, 
             name:'school'
          })
-         .then(result => {
-            intern.school = result;
+         .then(({school}) => {
+            intern.school = school;
             personelArray.push(intern);
             chooseNext();
          })
@@ -100,6 +100,7 @@ function chooseNext () {
                   }
                })
          } else {
+            console.log(personelArray);
              let page = generatePage(personelArray);
              console.log(page)
          }
