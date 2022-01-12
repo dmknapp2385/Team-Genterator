@@ -2,6 +2,7 @@ function generateEmployeeCard(personel) {
     console.log(personel)
     personel.forEach(person => {
         console.log(person)
+        console.log(person.name)
         return `
         <div class="card">
         <div class="card-header">
@@ -11,7 +12,6 @@ function generateEmployeeCard(personel) {
         <div class='card-body'>
             <p>ID: ${person.id} </p>
             <p> Email: ${person.email}</p>
-            // ${getAdditonalInfo(person)}
         </div>
     </div>`
     })

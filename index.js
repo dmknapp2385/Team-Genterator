@@ -27,10 +27,10 @@ const getGeneralInfo = function(role = "Manager") {
       }
    ])
    .then(data => {
+      let {name, id, email} = data;
       if (role === 'Manager') {
-         let manager = new Manager;
-         manager = data;
-         manager.role = role;
+         let manager = new Manager(name, id, email);
+         manager.getRole();
          inquirer.prompt ({
             type:'text', 
             message: `What is the manager's office number?`, 
@@ -42,8 +42,8 @@ const getGeneralInfo = function(role = "Manager") {
             chooseNext();
          })
       } else if (role === "Engineer") {
-         let engineer = new Engineer;
-         engineer = data;
+         let engineer = new Engineer(name, id, email );
+         engineer.getRole();
          inquirer.prompt ({
             type:'text', 
             message: `What is the engineer's github username?`, 
@@ -55,8 +55,8 @@ const getGeneralInfo = function(role = "Manager") {
             chooseNext();
          })
       } else if (role === 'Intern') {
-         let intern = new Intern;
-         intern = data;
+         let intern = new Intern(name, id, email);
+         intern.getRole();
          inquirer.prompt ({
             type:'text', 
             message: `What is the intern's school name?`, 
@@ -68,8 +68,8 @@ const getGeneralInfo = function(role = "Manager") {
             chooseNext();
          })
       } else {
-         let employee = new Employee;
-         employee = data;
+         let employee = new Employee (name, id, email);
+         employee.getRole();
          personelArray.push(employee)
          chooseNext();
       }
