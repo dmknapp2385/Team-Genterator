@@ -2,8 +2,9 @@ const Employee = require('./lib/Employee');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
+const generatePage = require('./src/generate-html');
+const {writeFile, copyFile} = require('./src/write-file.js');
 const inquirer = require('inquirer');
-const Choice = require('inquirer/lib/objects/choice');
 const personelArray = [];
 
 const getGeneralInfo = function(role = "Manager") {
@@ -26,7 +27,6 @@ const getGeneralInfo = function(role = "Manager") {
       }
    ])
    .then(data => {
-      console.log(role)
       if (role === 'Manager') {
          let manager = new Manager;
          manager = data;
@@ -37,10 +37,9 @@ const getGeneralInfo = function(role = "Manager") {
          })
          .then(({officeNumber}) => {
             manager.officeNumber = officeNumber;
-            manager.getRole();
+            // manager.getRole();
             personelArray.push(manager);
-            console.log(personelArray);
-            // chooseNext();
+            chooseNext();
          })
       } else if (role === "Engineer") {
          let engineer = new Engineer;
@@ -94,7 +93,6 @@ function chooseNext () {
                   choices: ['Intern', 'Engineer', 'Neither']
                })
                .then(({choice}) => {
-                  console.log(choice)
                   if(choice === 'Neither') {
                      getGeneralInfo('Employee');
                   } else {
@@ -102,17 +100,19 @@ function chooseNext () {
                   }
                })
          } else {
-            return console.log(personelArray);
+             let page = generatePage(personelArray);
+             console.log(page)
          }
       })
 }
-  
+   
 
 
-
+manager = new Manager;
+manager.getRole()
+console.log(manager.role)
 
 getGeneralInfo()
-   // .then(console.log(personelArray))
 
 
 
