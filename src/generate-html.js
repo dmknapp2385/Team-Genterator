@@ -1,5 +1,7 @@
-function generateEmployeeCard(personelArray) {
-    personelArray.forEach(person => {
+function generateEmployeeCard(personel) {
+    console.log(personel)
+    personel.forEach(person => {
+        console.log(person)
         return `
         <div class="card">
         <div class="card-header">
@@ -9,7 +11,7 @@ function generateEmployeeCard(personelArray) {
         <div class='card-body'>
             <p>ID: ${person.id} </p>
             <p> Email: ${person.email}</p>
-            ${getAdditonalInfo(person)}
+            // ${getAdditonalInfo(person)}
         </div>
     </div>`
     })

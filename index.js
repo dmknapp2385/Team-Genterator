@@ -30,7 +30,7 @@ const getGeneralInfo = function(role = "Manager") {
       if (role === 'Manager') {
          let manager = new Manager;
          manager = data;
-         manager.getRole();
+         manager.role = role;
          inquirer.prompt ({
             type:'text', 
             message: `What is the manager's office number?`, 
@@ -100,18 +100,22 @@ function chooseNext () {
                   }
                })
          } else {
-            console.log(personelArray);
              let page = generatePage(personelArray);
-             console.log(page)
+             writeFile(page)
+               .then(({message}) => {
+                  console.log(message);
+                  return copyFile();
+               })
+               .then(({message}) => console.log(message))
          }
       })
 }
    
 
 
-manager = new Manager;
-manager.getRole()
-console.log(manager.role)
+// manager = new Manager;
+// manager.getRole()
+// console.log(manager.role)
 
 getGeneralInfo()
 
