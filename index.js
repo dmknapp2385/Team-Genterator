@@ -30,6 +30,7 @@ const getGeneralInfo = function(role = "Manager") {
       if (role === 'Manager') {
          let manager = new Manager;
          manager = data;
+         manager.getRole();
          inquirer.prompt ({
             type:'text', 
             message: `What is the manager's office number?`, 
@@ -37,7 +38,6 @@ const getGeneralInfo = function(role = "Manager") {
          })
          .then(({officeNumber}) => {
             manager.officeNumber = officeNumber;
-            // manager.getRole();
             personelArray.push(manager);
             chooseNext();
          })
