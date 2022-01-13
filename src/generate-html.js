@@ -1,32 +1,34 @@
 function generateEmployeeCard(personel) {
-    console.log(personel)
-    personel.forEach(person => {
-        console.log(person)
-        console.log(person.name)
+    const personelHtmlArry = personel.map(({name,role,email,id, ... other}) => {
+        console.log(name)
         return `
         <div class="card">
-        <div class="card-header">
-            <h1>${person.name}</h1>
-            <h2>${person.role} image</h2>
-        </div>
-        <div class='card-body'>
-            <p>ID: ${person.id} </p>
-            <p> Email: ${person.email}</p>
-        </div>
-    </div>`
+            <div class="card-header">
+                <h1>${name}</h1>
+                <h2>${role} image</h2>
+            </div>
+            <div class='card-body'>
+                <p>ID: ${id} </p>
+                <p> Email: ${email}</p>${getAdditonalInfo(other)}
+            </div>
+        </div>`
     })
+    return `
+        ${personelHtmlArry.join('')}`
+
 }
 
-function getAdditonalInfo(person) {
-    if (person.github){
+function getAdditonalInfo(other) {
+    console.log(other);
+    if (other.github) {
         return`
-        <p>GitHub: ${person.github} </p>`;
-    } else if (person.officeNumber) {
+                <p>GitHub: ${other.github} </p>`;
+    } else if (other.officeNumber) {
         return`
-        <p>Office Number: ${person.officeNumber} </p>`;
-    } else if (person.school) {
+                <p>Office Number: ${other.officeNumber} </p>`;
+    } else if (other.school) {
         return`
-        <p>School: </p>`;
+                <p>School: ${other.school}</p>`;
     } else {
         return ``;
     }
