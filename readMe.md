@@ -5,26 +5,32 @@
 
 
 ## Description
-An application that allows a use to input team members name, id, email, and additional information based on role into the command line and produce a webpage that outputs all the information in a well layed out format
+An application that allows a user to input team members' name, id, email, and additional information based on role, into the command line to produce a webpage that outputs all the information in a well layed-out format.
 
     
-![](/images/image.png)
+![](/images/sample-question.png)
   
 
 
 ## Table of Contents
 
 * [Installation](#installation)
-* [Built With](#built-with)
 * [Usage](#usage)
+* [Built With](#built-with)
 * [Deploy](#deploy)
 * [Questions](#questions)
 
 ## Installation
-clone this project to your local device with git. Run npm install to get all libraries. 
+Clone this project to your local device with git. Get all dependencies by running 
+```````
+npm install
+````````
+
     
 ## Usage
-From the root directory, in the command line run node index. Follow the prompts to add team members. A manager is required. When completed. The generated web page will be in the ??????? folder. Open this in the browser to see the generated web page.
+From the root directory, in the command line run node index. 
+
+Follow the prompts to add team members. A manager is required. When completed. The generated web page will be in the ??????? folder. Open this in the browser to see the generated web page.
   
 ## Built With
 
@@ -36,7 +42,7 @@ From the root directory, in the command line run node index. Follow the prompts 
     
 ## Deploy
 
-Once a web page is developed, you can deploy it through github pages, make sure that it is in the root directory first.
+Once an HTML is generated, you can deploy it through github pages, make sure that the index file and css are in the root directory first.
   
 ## Credits
 Danielle Knapp
