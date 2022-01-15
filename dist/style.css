@@ -6,15 +6,15 @@
 
 header {
     padding: 30px;
-    background-color: aqua;
-    color: black;
+    background-color: black;
+    color: white;
     margin-bottom: 25px;
     text-align: center;
 }
 
 
 section {
-    margin: 10px 20% 5px 20%;
+    margin: 10px 15% 5px 15%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -27,13 +27,17 @@ h2, h3 {
     font-family: 'Courier New', Courier, monospace;
 }
 
+i {
+    margin-right: 5px;
+}
+
 h3 {
     font-size: 12px;
 }
 
 .card {
-    padding: 10px;
-    min-width: 33%;
+    padding: 5px;
+    width: 250px !important;
     height: 250px!important;
     text-align: center;
     border-style: double;
@@ -43,7 +47,7 @@ h3 {
 }
 
 .card-header {
-    background-color: coral;
+    background-color: aqua;
     padding-top: 10px;
     padding-bottom: 10px;
 }

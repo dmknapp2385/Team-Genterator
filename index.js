@@ -112,11 +112,6 @@ function chooseNext () {
 }
    
 
-
-// manager = new Manager;
-// manager.getRole()
-// console.log(manager.role)
-
 getGeneralInfo()
 
 
