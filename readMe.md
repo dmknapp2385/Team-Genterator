@@ -8,7 +8,9 @@
 An application that allows a user to input team members' name, id, email, and additional information based on role, into the command line to produce a webpage that outputs all the information in a well layed-out format.
 
     
-![](/images/sample-question.png)
+![](/images/sample-team.png)  
+![](/images/sample-html.png)
+
   
 
 
@@ -29,8 +31,11 @@ npm install
     
 ## Usage
 From the root directory, in the command line run node index. 
+![](/images/startup.gif)
 
-Follow the prompts to add team members. A manager is required. When completed. The generated web page will be in the ??????? folder. Open this in the browser to see the generated web page.
+Follow the prompts to add team members. A manager is required. When completed. The generated web page will be in the dist folder. Open this html file in the browser to see the generated web page. 
+
+[Example Walk Through Video](https://drive.google.com/file/d/1KnlDoxWINJG3XWaj4VRRTzId_LVjDa20/view?usp=sharing)
   
 ## Built With
 
